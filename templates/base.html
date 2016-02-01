@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+<head>
+
+  <title>SWISS TOURNAMENT with ELO Rating</title>
+  <link type="text/css" rel="stylesheet" href="/static/main.css">
+</head>
+
+<body>
+  <a href="/tournament" class="main-title">
+    Swiss Pairing and ELO rating
+  </a>
+
+  <div class="login-area">
+    {% if user %}
+      {{user.name}} (<a class="login-link" href="/tournament/logout">logout</a>)
+    {% else %}
+	<a class="login-link" href="/tournament/login">login</a>
+	|
+	<a class="login-link" href="/tournament/signup">signup</a>
+    {% endif %}
+  </div>
+
+  {% if user %}
+      <form method="post">
+      <label>
+         <input type="submit" name="new_tour_button" value="New Tournament">
+
+        <input type="checkbox" name="rem_pl_checkbox" value="yes"> remove all players
+      </label>
+      <label>
+      </label>
+
+
+    </form>
+    {% endif %}
+
+  <div class="playerslist">
+   {% block playerslist %}
+   {% endblock %}
+  </div>
+
+   <div id="roundslist">
+   {% block roundslist %}
+   {% endblock %}
+  </div>
+</body>
+
+</html>
+

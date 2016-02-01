@@ -1,0 +1,160 @@
+    body {
+        position: relative;
+        font-family: Helvetica, Arial, sans-serif;
+        font-size: 14px;
+        background-color: whitesmoke;
+        width: 900px;
+        margin: 0 auto;
+        padding: 10px;
+        color: #333;
+    }
+
+    .login-area {
+        font-size: 13px;
+        color: gray;
+        position: absolute;
+        top: 10px;
+        right: 10px;
+    }
+
+    .login-link {
+        color: gray;
+        text-decoration: none;
+    }
+
+    .login-link:visited {
+        color: gray;
+    }
+
+    .login-link:hover {
+        text-decoration: underline;
+    }
+
+    h2 {
+        font-size: 24px;
+        font-weight: bold;
+        margin-bottom: 20px;
+    }
+
+    label {
+
+        font-size: 24px;
+    }
+
+    label + label {
+    margin-top: 20px;
+    }
+
+    input[type=submit] {
+      font-size: 19px;
+    }
+
+    input[type=checkbox] {
+        width: 20px;
+        font-size: 22px;
+        padding: 2px;
+        font-family: monospace;
+    }
+
+    .main-title {
+        display: block;
+        color: #222;
+        font-size: 40px;
+        font-weight: bold;
+        text-align: center;
+        margin-bottom: 30px;
+        text-decoration: none;
+}
+    .playerslist {
+        box-sizing: content-box;
+    }
+
+table, th, td {
+    border: 1px solid black;
+    border-collapse: collapse;
+    text-align: center;
+    padding: 6px;
+}
+th {
+
+    background-color: aqua;
+}
+td {
+
+    padding: 4px;
+}
+
+
+#add_player_line {
+    border-collapse: collapse;
+    margin-top: 10px;
+    background-color: aquamarine;
+}
+
+#start_tour {
+    align-self: baseline;
+}
+input[type=text] {
+
+    width: 205px;
+    line-height: 0.91;
+    font-size: 20px;
+    padding: 3px;
+    margin-right: 15px;
+    font-family: monospace;
+}
+
+    .playerslist {
+    margin-top: 5px;
+    }
+
+#player_name_editText {
+    font-size: 13px;
+    text-align: left;
+    margin-top: 5px;
+    text-decoration: none;
+}
+
+input[type=submit] {
+    margin-left: 23px;
+}
+
+.round + .round {
+    margin-top: 35px;
+
+}
+
+.round-heading {
+    position: relative;
+    border-bottom: 3px solid #666;
+    background-color: lightgoldenrodyellow;
+}
+
+.round-number {
+    font-size: 24px;
+    font-weight: bold;
+
+    text-decoration: none;
+    color: #333;
+}
+.round-matches {
+    font-size: 16px;
+    font-weight: bold;
+    text-decoration: none;
+    color: #333;
+}
+.box {
+    width: 150px;
+    float: left;
+    background-color: lightblue;
+    margin-right: 15px;
+    margin-top: 5px;
+}
+.error {
+    color: red;
+    font-size: 18px;
+}
+/* Clearfix */
+.clearfix:before, .clearfix:after { content: ""; display: table; }
+.clearfix:after { clear: both; }
+.clearfix { *zoom: 1; }

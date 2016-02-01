@@ -1,0 +1,55 @@
+{% extends "base.html" %}
+
+{% block playerslist %}
+  <table style="width:100%">
+  <taa>
+    <th>Player Name</th>
+    <th>Games</th>
+    <th>Wins</th>
+    <th>Loses</th>
+    <th>Draws</th>
+    <th>Player Rating</th>
+  </taa>
+  {% for player in players %}
+  <tr>
+    <td>{{player.name}}</td>
+    <td>{{player.games}}</td>
+    <td>{{player.wins}}</td>
+    <td>{{player.loses}}</td>
+    <td>{{player.draws}}</td>
+    <td>{{player.rating}}</td>
+  </tr>
+  {% endfor %}
+  </table>
+
+  {% if user and not state %}
+  <form method="post">
+   <div id="add_player_line">
+    <label>new name: </label>
+    <input type="text" name="player_name_editText" value="{{input_name}}" width="50">
+    <label>new rating:</label>
+    <input type="text" name="player_rating_editText" value="{{input_rating}}">
+    <input type="submit" name="add_player_button" value="add new player">
+    <div class="error">{{error}}</div>
+   </div>
+   <p align="right">
+   <input type="submit" align="bottom-right" name="next_round_button" value="Start Tournament">
+   </p>
+  </form>
+  {% endif %}
+{% endblock %}
+
+{% block roundslist %}
+<br><br>
+  {% for round in rounds %}
+  <div>
+
+    {{ round.render(user) }}
+    <br><br>
+    <br><br>
+    <br><br>
+  </div>
+  {% endfor %}
+  <div class="error">{{error1}}</div>
+{% endblock %}
+

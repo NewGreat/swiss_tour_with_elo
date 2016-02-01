@@ -1,0 +1,61 @@
+
+<link type="text/css" rel="stylesheet" href="/static/main.css">
+
+{% if matches %}
+<div class="round">
+  <div class="round-heading">
+    <div class="round-number">
+      Round {{number}}
+    </div>
+  </div>
+
+    {% if is_finished %}
+        <div class="round-matches">
+
+        {% for match in matches %}
+        <div class="box">
+        {% if match[3][0] %}
+        <input type="radio" disabled="disabled" checked>{{match[0]}}<br>
+        {% else %}
+        <input type="radio" disabled="disabled">{{match[0]}}<br>
+        {% endif %}
+
+        {% if match[3][1] %}
+        <input type="radio" disabled="disabled" checked>{{match[1]}}<br>
+        {% else %}
+        <input type="radio" disabled="disabled">{{match[1]}}<br>
+        {% endif %}
+
+        {% if match[3][2] %}
+        <input type="radio" disabled="disabled" checked>Draw<br>
+        {% else %}
+        <input type="radio" disabled="disabled">Draw<br>
+        {% endif %}
+
+        </div>
+
+        {% endfor %}
+
+    {% else %}
+        <form method="post">
+        <div class="round-matches"><br>
+        {% for match in matches %}
+        <div class="box">
+        <input type="radio" name={{match[2]}} value="Player1"> {{match[0]}}<br>
+        <input type="radio" name={{match[2]}} value="Player2"> {{match[1]}}<br>
+        <input type="radio" name={{match[2]}} value="Draw"> Draw<br>
+        </div>
+        {% endfor %}
+        </div>
+        {% if user %}
+        <p align="right">
+        <input type="submit" name="next_round_button1" value="next Round"><br>
+        </p>
+        {%  endif %}
+        </form>
+
+        </div>
+    {% endif %}
+  </div>
+  <div></div>
+{% endif %}
